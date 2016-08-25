@@ -5,7 +5,8 @@
 直接用要添加轮播器的 view 调用该方法即可, 不需要再另外 addSubview
 
 1.导入头文件
-  #import "LCNImageScroll.h"
+ 
+   #import "LCNImageScroll.h"
   
 2.调用 lcn_addImageScrollWithFrame:urls:timeInterval:selectImageClick: 方法
 
@@ -17,7 +18,8 @@
 即完成轮播器的创建
 
 该方法可以自定义轮播器的大小, 播放时间, 当点击图片时, 能根据图片的索引值来做一些事情
-/**
+
+  /**
   *  添加图片轮播器
   *
   *  @param frame        frame
