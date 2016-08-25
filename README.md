@@ -12,9 +12,7 @@
   
 在终端执行 pod update 命令
 
-1.导入头文件
- 
- #import <LCNImageScroll.h>
+1.导入头文件 LCNImageScroll.h
   
 2.调用 lcn_addImageScrollWithFrame:urls:timeInterval:selectImageClick: 方法
 
