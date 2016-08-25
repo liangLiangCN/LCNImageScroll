@@ -8,7 +8,8 @@
   #import "LCNImageScroll.h"
   
 2.调用 lcn_addImageScrollWithFrame:urls:timeInterval:selectImageClick: 方法
-  [self.view lcn_addImageScrollWithFrame:CGRectMake(0, 0, 375, 200) urls:_urls timeInterval:3 selectImageClick:^(NSInteger index) {
+
+    [self.view lcn_addImageScrollWithFrame:CGRectMake(0, 0, 375, 200) urls:_urls timeInterval:3 selectImageClick:^(NSInteger index) {
         
         NSLog(@"%zd", index);
     }];
