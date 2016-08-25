@@ -14,6 +14,14 @@
 		EC1F15181D6E9A9900CB72C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1F15171D6E9A9900CB72C7 /* Assets.xcassets */; };
 		EC1F151B1D6E9A9900CB72C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1F15191D6E9A9900CB72C7 /* LaunchScreen.storyboard */; };
 		EC1F15261D6E9A9900CB72C7 /* LCNImageScrollDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F15251D6E9A9900CB72C7 /* LCNImageScrollDemoTests.m */; };
+		EC1F153C1D6E9AA500CB72C7 /* LCNCollecitonFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F15321D6E9AA500CB72C7 /* LCNCollecitonFlowLayout.m */; };
+		EC1F153D1D6E9AA500CB72C7 /* LCNCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F15341D6E9AA500CB72C7 /* LCNCollectionView.m */; };
+		EC1F153E1D6E9AA500CB72C7 /* LCNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F15361D6E9AA500CB72C7 /* LCNCollectionViewCell.m */; };
+		EC1F153F1D6E9AA500CB72C7 /* UIImageView+ContextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F15391D6E9AA500CB72C7 /* UIImageView+ContextSize.m */; };
+		EC1F15401D6E9AA500CB72C7 /* UIView+imageScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F153B1D6E9AA500CB72C7 /* UIView+imageScroll.m */; };
+		EC1F15451D6E9AAB00CB72C7 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC1F15421D6E9AAB00CB72C7 /* 01.jpg */; };
+		EC1F15461D6E9AAB00CB72C7 /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC1F15431D6E9AAB00CB72C7 /* 02.jpg */; };
+		EC1F15471D6E9AAB00CB72C7 /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC1F15441D6E9AAB00CB72C7 /* 03.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,20 @@
 		EC1F15211D6E9A9900CB72C7 /* LCNImageScrollDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCNImageScrollDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1F15251D6E9A9900CB72C7 /* LCNImageScrollDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNImageScrollDemoTests.m; sourceTree = "<group>"; };
 		EC1F15271D6E9A9900CB72C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC1F15311D6E9AA500CB72C7 /* LCNCollecitonFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollecitonFlowLayout.h; sourceTree = "<group>"; };
+		EC1F15321D6E9AA500CB72C7 /* LCNCollecitonFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollecitonFlowLayout.m; sourceTree = "<group>"; };
+		EC1F15331D6E9AA500CB72C7 /* LCNCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionView.h; sourceTree = "<group>"; };
+		EC1F15341D6E9AA500CB72C7 /* LCNCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollectionView.m; sourceTree = "<group>"; };
+		EC1F15351D6E9AA500CB72C7 /* LCNCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionViewCell.h; sourceTree = "<group>"; };
+		EC1F15361D6E9AA500CB72C7 /* LCNCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollectionViewCell.m; sourceTree = "<group>"; };
+		EC1F15371D6E9AA500CB72C7 /* LCNImageScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNImageScroll.h; sourceTree = "<group>"; };
+		EC1F15381D6E9AA500CB72C7 /* UIImageView+ContextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ContextSize.h"; sourceTree = "<group>"; };
+		EC1F15391D6E9AA500CB72C7 /* UIImageView+ContextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContextSize.m"; sourceTree = "<group>"; };
+		EC1F153A1D6E9AA500CB72C7 /* UIView+imageScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+imageScroll.h"; sourceTree = "<group>"; };
+		EC1F153B1D6E9AA500CB72C7 /* UIView+imageScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+imageScroll.m"; sourceTree = "<group>"; };
+		EC1F15421D6E9AAB00CB72C7 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
+		EC1F15431D6E9AAB00CB72C7 /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
+		EC1F15441D6E9AAB00CB72C7 /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +103,7 @@
 		EC1F150A1D6E9A9900CB72C7 /* LCNImageScrollDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EC1F15301D6E9AA500CB72C7 /* LCNImageScroll */,
 				EC1F150E1D6E9A9900CB72C7 /* AppDelegate.h */,
 				EC1F150F1D6E9A9900CB72C7 /* AppDelegate.m */,
 				EC1F15111D6E9A9900CB72C7 /* ViewController.h */,
@@ -89,6 +112,7 @@
 				EC1F15171D6E9A9900CB72C7 /* Assets.xcassets */,
 				EC1F15191D6E9A9900CB72C7 /* LaunchScreen.storyboard */,
 				EC1F151C1D6E9A9900CB72C7 /* Info.plist */,
+				EC1F15411D6E9AAB00CB72C7 /* images */,
 				EC1F150B1D6E9A9900CB72C7 /* Supporting Files */,
 			);
 			path = LCNImageScrollDemo;
@@ -109,6 +133,34 @@
 				EC1F15271D6E9A9900CB72C7 /* Info.plist */,
 			);
 			path = LCNImageScrollDemoTests;
+			sourceTree = "<group>";
+		};
+		EC1F15301D6E9AA500CB72C7 /* LCNImageScroll */ = {
+			isa = PBXGroup;
+			children = (
+				EC1F15311D6E9AA500CB72C7 /* LCNCollecitonFlowLayout.h */,
+				EC1F15321D6E9AA500CB72C7 /* LCNCollecitonFlowLayout.m */,
+				EC1F15331D6E9AA500CB72C7 /* LCNCollectionView.h */,
+				EC1F15341D6E9AA500CB72C7 /* LCNCollectionView.m */,
+				EC1F15351D6E9AA500CB72C7 /* LCNCollectionViewCell.h */,
+				EC1F15361D6E9AA500CB72C7 /* LCNCollectionViewCell.m */,
+				EC1F15371D6E9AA500CB72C7 /* LCNImageScroll.h */,
+				EC1F15381D6E9AA500CB72C7 /* UIImageView+ContextSize.h */,
+				EC1F15391D6E9AA500CB72C7 /* UIImageView+ContextSize.m */,
+				EC1F153A1D6E9AA500CB72C7 /* UIView+imageScroll.h */,
+				EC1F153B1D6E9AA500CB72C7 /* UIView+imageScroll.m */,
+			);
+			path = LCNImageScroll;
+			sourceTree = "<group>";
+		};
+		EC1F15411D6E9AAB00CB72C7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC1F15421D6E9AAB00CB72C7 /* 01.jpg */,
+				EC1F15431D6E9AAB00CB72C7 /* 02.jpg */,
+				EC1F15441D6E9AAB00CB72C7 /* 03.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +243,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1F15471D6E9AAB00CB72C7 /* 03.jpg in Resources */,
+				EC1F15461D6E9AAB00CB72C7 /* 02.jpg in Resources */,
 				EC1F151B1D6E9A9900CB72C7 /* LaunchScreen.storyboard in Resources */,
 				EC1F15181D6E9A9900CB72C7 /* Assets.xcassets in Resources */,
+				EC1F15451D6E9AAB00CB72C7 /* 01.jpg in Resources */,
 				EC1F15161D6E9A9900CB72C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,9 +266,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1F153E1D6E9AA500CB72C7 /* LCNCollectionViewCell.m in Sources */,
 				EC1F15131D6E9A9900CB72C7 /* ViewController.m in Sources */,
 				EC1F15101D6E9A9900CB72C7 /* AppDelegate.m in Sources */,
+				EC1F153D1D6E9AA500CB72C7 /* LCNCollectionView.m in Sources */,
+				EC1F153F1D6E9AA500CB72C7 /* UIImageView+ContextSize.m in Sources */,
+				EC1F15401D6E9AA500CB72C7 /* UIView+imageScroll.m in Sources */,
 				EC1F150D1D6E9A9900CB72C7 /* main.m in Sources */,
+				EC1F153C1D6E9AA500CB72C7 /* LCNCollecitonFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
