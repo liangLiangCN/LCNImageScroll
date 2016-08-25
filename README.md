@@ -5,9 +5,16 @@
 
 直接用要添加轮播器的 view 调用该方法即可, 不需要再另外 addSubview
 
+集成方法:
+在 podfile 文件中
+
+  pod 'LCNImageScroll'
+  
+在终端执行 pod update 命令
+
 1.导入头文件
  
- import "LCNImageScroll.h"
+ #import <LCNImageScroll.h>
   
 2.调用 lcn_addImageScrollWithFrame:urls:timeInterval:selectImageClick: 方法
 
