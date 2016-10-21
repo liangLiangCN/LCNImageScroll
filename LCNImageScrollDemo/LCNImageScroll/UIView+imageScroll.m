@@ -12,6 +12,7 @@
 
 @implementation UIView (imageScroll)
 
+
 - (void)lcn_addImageScrollWithFrame:(CGRect)frame urls:(NSArray<NSURL *> *)urls timeInterval:(NSTimeInterval)timeInterval selectImageClick:(void (^)(NSInteger))selectImaegClickBlock {
     
     UICollectionViewLayout *flowLayout = [[UICollectionViewLayout alloc] init];
@@ -25,5 +26,29 @@
     [self addSubview:collectionView];
     
 }
+
+- (void)lcn_addImageScrollWithFrame:(CGRect)frame urls:(NSArray<NSURL *> *)urls timeInterval:(NSTimeInterval)timeInterval addPageControlWithFrame:(CGRect)pageControlFrame pageCurrentColor:(UIColor *)currentColor pageColor:(UIColor *)pageColor selectImageClick:(void (^)(NSInteger))selectImaegClickBlock {
+    
+    UICollectionViewLayout *flowLayout = [[UICollectionViewLayout alloc] init];
+    
+    LCNCollectionView *collectionView = [[LCNCollectionView alloc] initWithFrame:frame collectionViewLayout: flowLayout];
+    
+    collectionView.urls = urls;
+    collectionView.timeInterval = timeInterval;
+    collectionView.selectImageClickBlock = selectImaegClickBlock;
+    
+    [self addSubview:collectionView];
+    
+    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:pageControlFrame];
+    pageControl.currentPage = 0;
+    pageControl.numberOfPages = urls.count;
+    [self addSubview:pageControl];
+    pageControl.currentPageIndicatorTintColor = currentColor;
+    pageControl.pageIndicatorTintColor = pageColor;
+    
+    collectionView.pageControl = pageControl;
+    
+}
+
 
 @end

@@ -16,6 +16,8 @@
 
 @property (nonatomic,strong) NSTimer *timer;
 
+@property (nonatomic,strong) NSArray *imageArray;
+
 @end
 
 @implementation LCNCollectionView
@@ -27,7 +29,7 @@
     self = [super initWithFrame:frame collectionViewLayout:flowLayout];
     if (self) {
         
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
         
         self.dataSource = self;
         self.delegate = self;
@@ -35,7 +37,6 @@
         // 注册cell
         [self registerClass:[LCNCollectionViewCell class] forCellWithReuseIdentifier:LCNCollectionViewControllerReusableCellWithReuseIdentifier];
         
-        // 让图片一出来就在第一组, 为了防止视图未加载完毕, 所以开启延时
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.025 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             NSIndexPath *indxPath = [NSIndexPath indexPathForItem:0 inSection:1];
@@ -45,9 +46,29 @@
             // 滚动到指定位置之后, 开启定时器
             [self timer];
         });
+        
     }
     return self;
 }
+
+
+//- (void)setUrls:(NSArray<NSURL *> *)urls {
+//    
+//    // 让图片一出来就在第一组, 为了防止视图未加载完毕, 所以开启延时
+//    if (urls.count > 0) {
+//        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.025 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            
+//            NSIndexPath *indxPath = [NSIndexPath indexPathForItem:0 inSection:1];
+//            
+//            [self scrollToItemAtIndexPath:indxPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+//            
+//            // 滚动到指定位置之后, 开启定时器
+//            [self timer];
+//        });
+//        
+//    }
+//}
 
 #pragma mark - 数据源方法
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -62,10 +83,12 @@
     
     LCNCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:LCNCollectionViewControllerReusableCellWithReuseIdentifier forIndexPath:indexPath];
     
-//    cell.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
+    if (cell == nil) {
+        cell = [[LCNCollectionViewCell alloc] init];
+    }
     
-    cell.imageUrl = self.urls[indexPath.item];
-    
+//    cell.imageUrl = self.urls[indexPath.item];
+    cell.image = self.imageArray[indexPath.item];
     return cell;
 }
 
@@ -75,6 +98,21 @@
     if (self.selectImageClickBlock) {
         self.selectImageClickBlock(indexPath.item);
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //    NSLog(@"%f----", scrollView.contentOffset.x);
+    CGFloat index = scrollView.contentOffset.x;
+    NSInteger page = (index - self.urls.count * self.bounds.size.width) / [UIScreen mainScreen].bounds.size.width;
+    if (page == self.urls.count) {
+        page = 0;
+    }
+    if (self.pageControl != nil) {
+        
+        self.pageControl.currentPage = page;
+    }
+    
+    //    [self scrollViewStop];
 }
 
 /**
@@ -146,5 +184,24 @@
     
     // 滚动到指定位置
     [self scrollToItemAtIndexPath:indxPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+}
+
+- (NSArray *)imageArray {
+    
+    if (!_imageArray) {
+        NSMutableArray *arrayM = [NSMutableArray array];
+        
+        [self.urls enumerateObjectsUsingBlock:^(NSURL * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            NSData *data = [NSData dataWithContentsOfURL:obj];
+            UIImage *image = [UIImage imageWithData:data];
+            
+            [arrayM addObject:image];
+        }];
+        
+        _imageArray = arrayM.copy;
+    }
+    
+    return _imageArray;
 }
 @end

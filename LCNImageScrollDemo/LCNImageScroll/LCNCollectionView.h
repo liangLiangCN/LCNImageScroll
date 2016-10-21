@@ -24,4 +24,8 @@ typedef void(^selectImageClick)(NSInteger index);
  */
 @property (nonatomic,assign) NSTimeInterval timeInterval;
 
+/**
+ *  分页指示器
+ */
+@property(nonatomic, strong) UIPageControl *pageControl;
 @end

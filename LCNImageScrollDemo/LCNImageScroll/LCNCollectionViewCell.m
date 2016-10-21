@@ -19,21 +19,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        [self setupUI];
+        _iconView = [[UIImageView alloc] initWithFrame:self.bounds];
+        [self.contentView addSubview:_iconView];
     }
     return self;
 }
 
-- (void)setupUI {
-    
-    _iconView = [[UIImageView alloc] initWithFrame:self.bounds];
-    [self.contentView addSubview:_iconView];
-}
 
 - (void)setImageUrl:(NSURL *)imageUrl {
     _imageUrl = imageUrl;
     
     // 根据 url 加载图片
+    // 如果崩在此处, 那么请检查您传过来的是 NSURL, 还是 NSString
     NSData *data = [NSData dataWithContentsOfURL:imageUrl];
     UIImage *image = [UIImage imageWithData:data];
     
@@ -41,6 +38,10 @@
     [_iconView lcn_setImage:image];
 }
 
-
+- (void)setImage:(UIImage *)image {
+    _image = image;
+    
+    [_iconView lcn_setImage:image];
+}
 
 @end
