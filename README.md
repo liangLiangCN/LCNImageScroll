@@ -27,3 +27,6 @@
 
     - (void)lcn_addImageScrollWithFrame:(CGRect)frame urls:(NSArray <NSURL *> *)urls timeInterval:(NSTimeInterval)timeInterval selectImageClick:(void (^)(NSInteger index))selectImaegClickBlock;
   
+当需要增加分页指示器时, 调用此方法
+  
+    - (void)lcn_addImageScrollWithFrame:(CGRect)frame urls:(NSArray<NSURL *> *)urls timeInterval:(NSTimeInterval)timeInterval addPageControlWithFrame:(CGRect)pageControlFrame pageCurrentColor:(UIColor *)currentColor pageColor:(UIColor *)pageColor selectImageClick:(void (^)(NSInteger))selectImaegClickBlock;
