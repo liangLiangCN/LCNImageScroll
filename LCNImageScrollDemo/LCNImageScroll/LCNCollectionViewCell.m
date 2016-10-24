@@ -42,7 +42,6 @@
     _image = image;
     
     UIImage *newImage = [_iconView lcn_setImage:image];
-
     
     // 把处理好的图片返回给控制器, 让控制器做一个缓存
     if (self.newImage && newImage) {

@@ -95,7 +95,7 @@
         if (![self.imageArray containsObject:newImage]) {
             [self.imageArray replaceObjectAtIndex:indexPath.item withObject:newImage];
         }
-//        NSLog(@"%@----%zd", self.imageArray, indexPath.item);
+        NSLog(@"%@----%zd", self.imageArray, indexPath.item);
     };
     return cell;
 }
