@@ -10,5 +10,5 @@
 
 @interface UIImageView (ContextSize)
 
-- (void)lcn_setImage:(UIImage *)image;
+- (UIImage *)lcn_setImage:(UIImage *)image;
 @end

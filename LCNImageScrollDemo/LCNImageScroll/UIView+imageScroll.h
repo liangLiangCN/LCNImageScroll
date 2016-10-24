@@ -11,7 +11,7 @@
 @interface UIView (imageScroll)
 
 /**
- *  添加图片轮播器
+ *  添加图片轮播器(不带分页指示器)
  *
  *  @param frame        frame
  *  @param urls         需要轮播的图片数组(url)
@@ -21,7 +21,7 @@
 - (void)lcn_addImageScrollWithFrame:(CGRect)frame urls:(NSArray <NSURL *> *)urls timeInterval:(NSTimeInterval)timeInterval selectImageClick:(void (^)(NSInteger index))selectImaegClickBlock;
 
 /**
- *  添加图片轮播器
+ *  添加图片轮播器(带分页指示器)
  *
  *  @param frame                frame
  *  @param urls                 需要轮播的图片数组(url)
@@ -31,5 +31,5 @@
  *  @param pageColor            分页指示器未选中页的颜色
  *  @param selectImaegClickBlock 图片的点击事件
  */
-- (void)lcn_addImageScrollWithFrame:(CGRect)frame urls:(NSArray<NSURL *> *)urls timeInterval:(NSTimeInterval)timeInterval addPageControlWithFrame:(CGRect)pageControlFrame pageCurrentColor:(UIColor *)currentColor pageColor:(UIColor *)pageColor selectImageClick:(void (^)(NSInteger))selectImaegClickBlock;
+- (void)lcn_addImageScrollWithFrame:(CGRect)frame urls:(NSArray<NSURL *> *)urls timeInterval:(NSTimeInterval)timeInterval addPageControlWithFrame:(CGRect)pageControlFrame pageCurrentColor:(UIColor *)currentColor pageColor:(UIColor *)pageColor selectImageClick:(void (^)(NSInteger index))selectImaegClickBlock;
 @end

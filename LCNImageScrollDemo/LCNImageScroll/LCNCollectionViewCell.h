@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^newImageBlock)(UIImage *image);
+
 @interface LCNCollectionViewCell : UICollectionViewCell
 
 /**
@@ -17,4 +19,8 @@
 
 
 @property(nonatomic, strong) UIImage *image;
+
+@property(nonatomic, copy) newImageBlock newImage;
+
+
 @end

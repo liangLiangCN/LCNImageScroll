@@ -10,8 +10,13 @@
 
 @implementation UIImageView (ContextSize)
 
-- (void)lcn_setImage:(UIImage *)image {
+- (UIImage *)lcn_setImage:(UIImage *)image {
     
+//    NSLog(@"%@----%@", NSStringFromCGSize(image.size), NSStringFromCGSize(self.bounds.size));
+    if (CGSizeEqualToSize(image.size, self.bounds.size)) {
+        [self setImage:image];
+        return nil;
+    }
     // 根据 imageiew 的大小, 重新调整 image 的大小
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0);
     
@@ -20,5 +25,7 @@
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     
     [self setImage:resultImage];
+    
+    return resultImage;
 }
 @end

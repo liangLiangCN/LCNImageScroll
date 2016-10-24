@@ -16,7 +16,8 @@
 
 @property (nonatomic,strong) NSTimer *timer;
 
-@property (nonatomic,strong) NSArray *imageArray;
+@property (nonatomic,strong) NSMutableArray *imageArray;
+
 
 @end
 
@@ -89,6 +90,13 @@
     
 //    cell.imageUrl = self.urls[indexPath.item];
     cell.image = self.imageArray[indexPath.item];
+    cell.newImage = ^(UIImage *newImage) {
+        // 把做过处理的图片 做一个缓存
+        if (![self.imageArray containsObject:newImage]) {
+            [self.imageArray replaceObjectAtIndex:indexPath.item withObject:newImage];
+        }
+//        NSLog(@"%@----%zd", self.imageArray, indexPath.item);
+    };
     return cell;
 }
 
@@ -101,7 +109,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //    NSLog(@"%f----", scrollView.contentOffset.x);
+    
     CGFloat index = scrollView.contentOffset.x;
     NSInteger page = (index - self.urls.count * self.bounds.size.width) / [UIScreen mainScreen].bounds.size.width;
     if (page == self.urls.count) {
@@ -112,7 +120,6 @@
         self.pageControl.currentPage = page;
     }
     
-    //    [self scrollViewStop];
 }
 
 /**
@@ -186,7 +193,7 @@
     [self scrollToItemAtIndexPath:indxPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
 }
 
-- (NSArray *)imageArray {
+- (NSMutableArray *)imageArray {
     
     if (!_imageArray) {
         NSMutableArray *arrayM = [NSMutableArray array];
@@ -199,9 +206,12 @@
             [arrayM addObject:image];
         }];
         
-        _imageArray = arrayM.copy;
+        _imageArray = arrayM;
     }
     
     return _imageArray;
 }
+
+
+
 @end

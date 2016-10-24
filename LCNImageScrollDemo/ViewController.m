@@ -24,8 +24,11 @@
     // 加载数据
     [self loadData];
     
-    [self.view lcn_addImageScrollWithFrame:CGRectMake(0, 0, 375, 200) urls:_urls timeInterval:3 selectImageClick:^(NSInteger index) {
-        
+//    [self.view lcn_addImageScrollWithFrame:CGRectMake(0, 0, 375, 200) urls:_urls timeInterval:3 selectImageClick:^(NSInteger index) {
+//        
+//        NSLog(@"%zd", index);
+//    }];
+    [self.view lcn_addImageScrollWithFrame:CGRectMake(0, 0, 375, 200) urls:_urls timeInterval:2 addPageControlWithFrame:CGRectMake(10, 175, 100, 30) pageCurrentColor:[UIColor redColor] pageColor:[UIColor blueColor] selectImageClick:^(NSInteger index) {
         NSLog(@"%zd", index);
     }];
 }
