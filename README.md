@@ -1,14 +1,17 @@
 图片无线轮播, 很多人都会写, 原理就不多说了, 这个是我自己写的第一个第三方, 可以一句话添加图片轮播器, 它的优势有两个, 一个是简单, 调用一个方法搞定, 第二个是它对图片的拉伸模式做了处理
 
 集成方法: 
+
 1.1自动集成:
+
 在 podfile 文件中
 
 pod 'LCNImageScroll'
 
 在终端执行 pod update 命令
-1.2手动集成:
-https://github.com/liangLiangCN/LCNImageScroll
+
+1.2 手动集成
+
 从 github 下载 demo, 然后把 LCNImageScroll 文件夹拖入到项目中即可
 
 2.导入头文件 LCNImageScroll.h
