@@ -26,18 +26,6 @@
 }
 
 
-- (void)setImageUrl:(NSURL *)imageUrl {
-    _imageUrl = imageUrl;
-    
-    // 根据 url 加载图片
-    // 如果崩在此处, 那么请检查您传过来的是 NSURL, 还是 NSString
-    NSData *data = [NSData dataWithContentsOfURL:imageUrl];
-    UIImage *image = [UIImage imageWithData:data];
-    
-    // 自定义设置图片的方法, 防止图片生成拉伸模式, 影响性能!
-    [_iconView lcn_setImage:image];
-}
-
 - (void)setImage:(UIImage *)image {
     _image = image;
     

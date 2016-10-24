@@ -12,7 +12,6 @@
 
 - (UIImage *)lcn_setImage:(UIImage *)image {
     
-//    NSLog(@"%@----%@", NSStringFromCGSize(image.size), NSStringFromCGSize(self.bounds.size));
     if (CGSizeEqualToSize(image.size, self.bounds.size)) {
         [self setImage:image];
         return nil;

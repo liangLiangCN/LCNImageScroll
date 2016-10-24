@@ -12,12 +12,6 @@ typedef void(^newImageBlock)(UIImage *image);
 
 @interface LCNCollectionViewCell : UICollectionViewCell
 
-/**
- *  每张图片的url
- */
-@property (nonatomic,strong) NSURL *imageUrl;
-
-
 @property(nonatomic, strong) UIImage *image;
 
 @property(nonatomic, copy) newImageBlock newImage;

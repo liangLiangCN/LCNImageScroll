@@ -18,6 +18,7 @@
 
 @property (nonatomic,strong) NSMutableArray *imageArray;
 
+@property (nonatomic,strong) NSMutableArray *imageNewArrayM;
 
 @end
 
@@ -92,11 +93,15 @@
     cell.image = self.imageArray[indexPath.item];
     cell.newImage = ^(UIImage *newImage) {
         // 把做过处理的图片 做一个缓存
-        if (![self.imageArray containsObject:newImage]) {
-            [self.imageArray replaceObjectAtIndex:indexPath.item withObject:newImage];
+        if (![self.imageNewArrayM containsObject:newImage]) {
+            //            [self.imageArray replaceObjectAtIndex:index withObject:newImage];
+            [self.imageNewArrayM addObject:newImage];
+            [self replaceImageArray];
         }
-        NSLog(@"%@----%zd", self.imageArray, indexPath.item);
+        //        NSLog(@"%@----%zd", self.imageArray, indexPath.item);
     };
+    
+
     return cell;
 }
 
@@ -200,6 +205,7 @@
         
         [self.urls enumerateObjectsUsingBlock:^(NSURL * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
+            // 如果崩在此处, 那么请检查您传过来的是 NSURL, 还是 NSString
             NSData *data = [NSData dataWithContentsOfURL:obj];
             UIImage *image = [UIImage imageWithData:data];
             
@@ -212,6 +218,17 @@
     return _imageArray;
 }
 
+- (NSMutableArray *)imageNewArrayM {
+    if (!_imageNewArrayM) {
+        _imageNewArrayM = [NSMutableArray array];
+    }
+    return _imageNewArrayM;
+}
+- (void)replaceImageArray {
+    if (self.imageNewArrayM.count == self.imageArray.count) {
+        self.imageArray = self.imageNewArrayM.copy;
+    }
+}
 
 
 @end
